@@ -9,6 +9,13 @@ typedef long long ll;
 void helper(){
     ll n,m,x,y;
     cin>>n>>m>>x>>y;
+
+    cerr<<"Anuj\n";
+
+
+
+    //my shity approach====
+
     // if(n!=1 && m!=1){
     //     map<pair<ll,ll>,ll>mp;
     //     mp[{1,1}]=abs(x-1)+abs(y-1);
@@ -42,6 +49,8 @@ void helper(){
     //     }
     // }
     // return;
+
+    //optimized and correct approach==
     cout<<1<<' '<<1<<' '<<n<<' '<<m<<'\n';
     return;
 }
