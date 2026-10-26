@@ -53,8 +53,8 @@ void helper(){
     for(ll i=0;i<v.size();i++){
         cout<<'.'<<v[i];
     }
-    // debug(s)
-    // debug(v);
+    debug(s)
+    debug(v);
     return;
 }
 
