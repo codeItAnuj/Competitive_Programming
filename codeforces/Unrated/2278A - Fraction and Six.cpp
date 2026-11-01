@@ -42,36 +42,25 @@ void helper(){
     cin>>m>>n;
     string p,q;
     cin>>p>>q;
-    set<char>st;
-    ll sc=0,ic=0,xc=0;
+    //using frequency vector--
+    vector<ll>freq(26);
     for(ll i=0;i<m;i++){
-        if(sc==0 && p[i]=='s'){
-            st.insert(p[i]);
-            p[i]='1';
-            sc++;
-        }
-        if(ic==0 && p[i]=='i'){
-            st.insert(p[i]);
-            p[i]='1';
-            ic++;
-
-        }
-        if(xc==0 && p[i]=='x'){
-            st.insert(p[i]);
-            p[i]='1';
-            xc++;
-        }
+        freq[p[i]-'a']++;
     }
-    sort(p.begin(),p.end());
-    string s1=p.substr(3,m-1);
-    sort(q.begin(),q.end());
-    if(st.size()==3){
-        if(s1==q){
-            cout<<"YES\n";
+    for(ll i=0;i<n;i++){
+        freq[q[i]-'a']--;
+    }
+    vector<ll>tar(26);
+    tar['s'-'a']=1;
+    tar['i'-'a']=1;
+    tar['x'-'a']=1;
+    for(ll i=0;i<26;i++){
+        if(freq[i]!=tar[i]){
+            cout<<"NO\n";
             return;
         }
     }
-    cout<<"NO\n";
+    cout<<"YES\n";
     return;
 }
 
